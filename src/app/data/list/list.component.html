@@ -1,0 +1,16 @@
+<p>
+  list works!
+</p>
+<ul>
+  <li class="text" *ngFor="let item of data | async">
+    
+    <div *ngIf="type === 'pages'; else elseBlock">
+      <a routerLink="/data/pages/{{ item.syndicationKey }}">{{ item.title }}</a>
+      <pre>{{ item | json }}</pre>
+    </div>
+    <ng-template #elseBlock>
+      <a routerLink="/data/{{ type }}/{{ item.$key }}">{{ item.$key }}</a>
+      <pre>{{ item | json }}</pre>
+    </ng-template>-
+  </li>
+</ul>

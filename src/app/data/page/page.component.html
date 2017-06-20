@@ -1,0 +1,18 @@
+<p>
+  page works!
+</p>
+<div *ngFor="let d of data | async">
+  <pre>{{ d | json }}</pre>
+</div>
+<p>Tags:</p>
+<ul>
+  <li *ngFor="let tag of tags | async">
+    <a routerLink="/data/tags/{{ tag.$key }}">{{ tag.$key }}</a>
+  </li>
+</ul>
+<p>Keywords:</p>
+<ul>
+  <li *ngFor="let keyword of keywords | async">
+    <a routerLink="/data/keywords/{{ keyword.$key }}">{{ keyword.$key }}</a>
+  </li>
+</ul>

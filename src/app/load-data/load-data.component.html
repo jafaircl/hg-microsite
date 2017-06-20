@@ -1,0 +1,9 @@
+<p>
+  load-data works!
+</p>
+<ul>
+  <li class="text" *ngFor="let item of items">
+    {{ item | json }}
+  </li>
+</ul>
+<button (click)="getItems()">Push</button>

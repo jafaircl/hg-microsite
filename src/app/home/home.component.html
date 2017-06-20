@@ -1,0 +1,10 @@
+<p>
+  home works!
+</p>
+<a routerLink="/data">View Data</a>
+<a routerLink="/load-data">Load Data</a>
+<ul>
+  <li class="text" *ngFor="let page of pages | async">
+    <pre>{{ page | json }}</pre>
+  </li>
+</ul>

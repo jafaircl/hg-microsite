@@ -1,10 +1,17 @@
+import { RouterModule, Routes } from '@angular/router';
+
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    children: []
+    loadChildren: 'app/home/home.module#HomeModule'
+  }, {
+    path: 'load-data',
+    loadChildren: 'app/load-data/load-data.module#LoadDataModule'
+  }, {
+    path: 'data',
+    loadChildren: 'app/data/data.module#DataModule'
   }
 ];
 

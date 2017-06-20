@@ -1,0 +1,16 @@
+<p>
+  detail works!
+</p>
+<p>{{ type.slice(0,-1) }}: {{ id }}</p>
+<p>Pages:</p>
+<ul>
+  <li *ngFor="let page of item | async">
+    <a routerLink="/data/pages/{{ page.syndicationKey }}">{{ page.title }}</a>
+  </li>
+</ul>
+<p>{{ search }}:</p>
+<ul>
+  <li class="text" *ngFor="let relation of relations">
+    <a routerLink="/data/{{ search }}/{{ relation.$key }}">{{ relation.$key }}</a>
+  </li>
+</ul>

@@ -34,14 +34,14 @@ export class DetailComponent implements OnInit {
         }
       })
 
-      itemSub = this.item.take(1).subscribe(term => {
+      itemSub = this.item.subscribe(term => {
         term.forEach(thing => {
           searchSub = this.db.list(`/${this.search}`, {
             query: {
               orderByChild: thing.$key,
               startAt: 0
             }
-          }).take(1).subscribe(list => {
+          }).subscribe(list => {
             list.forEach(i => {
               if (this.relations.filter(e => e.$key === i.$key).length === 0) {
                 this.relations.push(i)

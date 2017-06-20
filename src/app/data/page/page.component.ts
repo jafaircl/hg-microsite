@@ -39,4 +39,12 @@ export class PageComponent implements OnInit {
       })
     }
   }
+
+  getRelevance(keyword) {
+    for (const i in keyword) {
+      if (keyword[i].syndicationKey === this.id) {
+        return Math.abs(keyword[i].relevance)
+      }
+    }
+  }
 }

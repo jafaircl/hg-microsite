@@ -13,6 +13,6 @@
 <p>Keywords:</p>
 <ul>
   <li *ngFor="let keyword of keywords | async">
-    <a routerLink="/data/keywords/{{ keyword.$key }}">{{ keyword.$key }}</a>
+    <a routerLink="/data/keywords/{{ keyword.$key }}">{{ keyword.$key }} - {{ getRelevance(keyword) }}</a>
   </li>
 </ul>
